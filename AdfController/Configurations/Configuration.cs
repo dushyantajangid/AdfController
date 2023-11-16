@@ -15,7 +15,6 @@ namespace AdfController.Configurations
               .AddJsonFile($"Configurations/appsettings.json", optional: true, reloadOnChange: true)
               .Build();
         }
-
         public ApplicationInsights GetApplicationInsightsConfiguration()
         {
             var applicationInsightsConfig = _configuration.GetSection("ApplicationInsights");
@@ -25,17 +24,6 @@ namespace AdfController.Configurations
                 ConnectionString = applicationInsightsConfig.GetValue<string>("ConnectionString")
             };
         }
-
-        public Logging GetLoggingConfiguration()
-        {
-            var loggingConfig = _configuration.GetSection("Logging");
-
-            return new Logging()
-            {
-                LogLevel = new LogLevel() { Default = loggingConfig.GetValue<string>("LogLevel:Default") }
-            };
-        }
-
         public AzureOptions GetAzureConfiguration()
         {
             var azureOptionsConfig = _configuration.GetSection("AzureOptions");
@@ -51,6 +39,10 @@ namespace AdfController.Configurations
                 ActiveDirectoryAuthority = azureOptionsConfig.GetValue<string>("ActiveDirectoryAuthority"),
                 ResourceManagerUrl = azureOptionsConfig.GetValue<string>("ResourceManagerUrl"),
             };
+        }
+        public IConfigurationSection GetConfigurationSection(string sectionName)
+        {
+            return _configuration.GetSection(sectionName);
         }
     }
 }
