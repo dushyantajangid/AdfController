@@ -25,7 +25,7 @@ This operation is used to get status of existing pipeline run
 - Azure data factory pipeline/s
 - Azure AD application with contributor rights to ADF resource
 - Azure application insights
-- .Net 6.0 framwork
+- .Net 6.0 framework
 
 # Framework & Technology
 
@@ -33,15 +33,15 @@ This operation is used to get status of existing pipeline run
 
 # Configuration
 
-For azure connection, ADF Console application require below configuration in ./Configurations/appsettings.json file
+For azure connection, ADF Console application require below configuration in `./Configurations/appsettings.json` file
 
 ### ADF Connection configuration
 
 - ResourceGroup: Name of resoure group which hold ADF resources
 - DataFactoryName: Name of data factory resource
 - TenantId: Azure Tenant id
-- ApplicationId: Azure AD'd application which has access to ADF resource
-- AuthenticationKey: Azure AD's application authentication key
+- ApplicationId: Azure AD's application id (Application (client) ID) which has access to ADF resource
+- AuthenticationKey: Azure AD's application authentication key (Generated in application's certificates & secrets section)
 - SubscriptionId: Azure subscription id
 
 ### Application Insight configuration
@@ -74,13 +74,13 @@ Console logs are generated as per logging configuration.
 ### Application Insights
 
 - It generates and register events on azure application insights.
-- To view events please log into azure and navigate to application insights resource.
+- To view events please login azure portal and navigate to application insights resource.
 
 # Run Project
 
 \*Please make sure all configuration is updated before running
 
-- Go to publish folder from command prompt '.\AdfController\bin\Release\net6.0\publish\'
+- Go to publish folder from command prompt `.\AdfController\bin\Release\net6.0\publish\`
 - Run below command
   ```
   .\AdfController.exe
