@@ -19,7 +19,7 @@ This operation is used to get status of existing pipeline run
 - Input: Pipeline run id
 - Output: Pipeline name, status, run start and run end
 
-[![ADFController](./Documentation/image/ADFController.jpg)]
+![ADFController](./Documentation/image/ADFController.jpg)
 
 # Prerequisites
 
