@@ -57,11 +57,15 @@ For azure connection, ADF Console application require below configuration in ./C
 
 ### Build project
 
+```
 dotnet build --configuration Release
+```
 
 ### Publish project
 
+```
 dotnet publish --configuration Release
+```
 
 ### Logging
 
@@ -76,5 +80,8 @@ Console logs are generated as per logging configuration.
 
 \*Please make sure all configuration is updated before running
 
-- Go to publish folder from command prompt ( .\AdfController\bin\Release\net6.0\publish\ )
-- Run ./AdfController.exe command
+- Go to publish folder from command prompt '.\AdfController\bin\Release\net6.0\publish\'
+- Run below command
+  ```
+  .\AdfController.exe
+  ```
